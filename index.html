@@ -36,17 +36,30 @@
 
       // 页面组件 JSX语法
       function MyApp() {
-        const listItems = products.map((product) => {
+        // useState 是我们常说的一个 Hook
+        const [count, setCount] = React.useState(0);
+
+        // const result = useState(0);
+        // const count = result[0];
+        // const setCount = result[1];
+
+        const listItems = products.map((product, index) => {
           return (
             <li 
                 key={product.id} 
                 style={{ color: product.type === 'fruit' ? 'red' : 'green' }}
+                onClick={ ()=> { setCount(count + 1) } }
             >
               {product.title}
             </li>
           );
         });
-        return <ul>{listItems}</ul>;
+        return (
+            <div>
+                <p>{count}</p>
+                <ul>{listItems}</ul>
+            </div>
+        );
       }
 
       // 获取一个页面根节点
