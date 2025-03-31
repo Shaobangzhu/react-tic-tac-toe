@@ -1,28 +1,31 @@
-import { useState } from "react";
 import Square from "./Square";
 
-function Board() {
-  const [squares, setSquares] = useState(Array(9).fill(null));
+function getNextPlayer(squares) {
+  const filledSquares = squares.filter((item) => item === "X" || item === "O");
+  const filledNumber = filledSquares.length;
+  const nextPlayer = filledNumber % 2 === 0 ? "X" : "O";
+  return nextPlayer;
+}
+
+function Board({squares, winner, onChange}) {
+  const nextPlayer = getNextPlayer(squares);
+
+  const status = winner ? `${winner} is winner` : `Next player: ${nextPlayer}`;
 
   const clickHandler = (index) => {
     const currentSquare = squares[index];
-    if (currentSquare === null) {
-      const filledSquares = squares.filter(
-        (item) => item === "X" || item === "O"
-      );
-      const filledNumber = filledSquares.length;
-      const nextLetter = filledNumber % 2 === 0 ? "X" : "O";
-
+    
+    if (currentSquare === null && !winner) {
       const newSquares = squares.slice();
-      newSquares[index] = nextLetter;
-      setSquares(newSquares);
+      newSquares[index] = nextPlayer;
+      onChange(newSquares);
     }
   };
 
   return (
     <>
+      <div className="status">{status}</div>
       <div className="board-row">
-        -
         <Square value={squares[0]} index={0} onClick={clickHandler} />
         <Square value={squares[1]} index={1} onClick={clickHandler} />
         <Square value={squares[2]} index={2} onClick={clickHandler} />
