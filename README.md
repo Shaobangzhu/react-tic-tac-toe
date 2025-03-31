@@ -14,6 +14,7 @@ A simple and interactive Tic-Tac-Toe game built with React. This project is desi
 
 ## 📁 Project Structure
 
+```bash
 react-tic-tac-toe/
 ├── public/
 │ └── index.html
@@ -23,6 +24,7 @@ react-tic-tac-toe/
 │ └── index.js
 ├── package.json
 └── README.md
+```
 
 ## 🛠️ Built With
 

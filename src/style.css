@@ -1,50 +1,96 @@
-.board-row::after {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .game {
+    display: flex;
+    gap: 3rem;
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .game-board {
+    width: auto;
+  }
+  
+  .status {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  
+  .board-row::after {
     clear: both;
     content: '';
     display: block;
-}
-
-.status {
-    margin-bottom: 10px;
-}
-
-.square {
-    background: #FFF;
-    border: 1px solid #999;
+  }
+  
+  .square {
+    background: #ffffff;
+    border: 2px solid #ccc;
     float: left;
-    height: 34px;
-    width: 34px;
-    line-height: 34px;
-    margin-right: -1px;
-    margin-bottom: -1px;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    margin-right: -2px;
+    margin-bottom: -2px;
     text-align: center;
-}
-
-.game {
-    display: flex;
-}
-
-.game-board {
-    width: 200px;
-}
-
-.game-history {
+    font-size: 40px;
+    font-weight: bold;
+    color: #00796b;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    border-radius: 12px;
+  }
+  
+  .square:hover {
+    background: #e0f2f1;
+    transform: scale(1.05);
+  }
+  
+  .square:active {
+    background: #b2dfdb;
+  }
+  
+  .game-history {
     flex: 1;
-}
-
-.history-title {
-    margin: 0;
-    font-weight: normal;
-    font-size: 16px;
-}
-
-.history-list {
+    min-width: 250px;
+  }
+  
+  .history-title {
+    margin: 0 0 15px 0;
+    font-weight: bold;
+    font-size: 22px;
+    color: #444;
+  }
+  
+  .history-list {
+    list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.history-item {
-    margin-top: 5px;
-    font-size: 12px;
+  }
+  
+  .history-item {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #00796b;
     cursor: pointer;
-}
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+  }
+  
+  .history-item:hover {
+    background-color: #e0f7fa;
+  }  
