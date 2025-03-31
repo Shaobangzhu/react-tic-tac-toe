@@ -19,16 +19,20 @@ react-tic-tac-toe/
 ├── public/
 │ └── index.html
 ├── src/
-│ ├── components/
-│ ├── App.js
-│ └── index.js
+│ ├── Board.jsx
+│ ├── Game.jsx
+│ ├── History.jsx
+│ ├── index.js
+│ ├── Square.jsx
+│ └── style.css
 ├── package.json
 └── README.md
 ```
 Each file serves a specific purpose:
-- **App.jsx**: The root component that renders the `Board` component.
+- **Game.jsx**: The root component that renders the `Board` component.
 - **Board.jsx**: Contains the game board logic and manages the state of the squares.
 - **Square.jsx**: Represents an individual square on the board, displaying its state and handling click events.
+- **Historey.jsx**: Displays a clickable list of past game states
 - **index.js**: The main entry point that renders the app into the DOM.
 - **style.css**: Contains the styles for the Tic-Tac-Toe game layout and components.
 - **package.json**: Lists project dependencies and provides scripts for development and production builds.
